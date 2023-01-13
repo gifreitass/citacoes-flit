@@ -1,8 +1,9 @@
-import Quote from "../molecules/Quote"
+import Quote from "./Quote"
 
 export interface iBestQuotes{
     quote: string,
-    movie: string
+    movie: string,
+    character: string,
     rate: number
 }
 
@@ -16,7 +17,7 @@ const BestQuotes: React.FC<{bestQuotes: iBestQuotes[]}> = (props) => {
             }).map((quote, index) => {
                 // index é a posição do objeto no array e o key é uma prop pro react identificar de forma única cada elemento ou componente que vai ser criado, alterado, excluído e/ou selecionado a partir de um array
                 //quote-item: chave única pro react identificar
-                return <Quote key={`quote-item-${index}`} description={quote.quote} movie={quote.movie} showButton={false} rate={quote.rate}/>         
+                return <Quote key={`quote-item-${index}`} description={quote.quote} movie={quote.movie} character={quote.character} showButton={false} rate={quote.rate}/>         
             })}
         </>
     )

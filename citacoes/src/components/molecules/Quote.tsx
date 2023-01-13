@@ -1,5 +1,5 @@
 import React from "react";
-import { iBestQuotes } from "../atoms/BestQuotes";
+import { iBestQuotes } from "./BestQuotes";
 import ButtonRate from "../atoms/ButtonRate"
 
 interface props{
@@ -7,33 +7,39 @@ interface props{
     bestQuotes?: iBestQuotes[];
     description: string;
     movie: string;
+    character: string;
     rate?: number
     //nomear a tipagem (newQuotes)
     setBestQuotes?: (newQuotes: iBestQuotes[]) => void
+    getQuote?: () => void
 }
 
 const Quote: React.FC<props> = (props) => {
         const handleClick = (evt: React.MouseEvent<HTMLButtonElement>) => {
-            if (!props.bestQuotes) {
+            if (!props.bestQuotes || !props.getQuote) {
                 return
             }
+
             let arrayQuotes = props.bestQuotes
             // ...arrayQuotes: adiciona os elementos do array bestQuotes
             arrayQuotes = [...arrayQuotes, {
                 quote: props.description,
                 movie: props.movie,
+                character: props.character,
                 rate: parseInt(evt.currentTarget.value)
             }]
             if(props.setBestQuotes){
                 props.setBestQuotes(arrayQuotes)
             }
+
+            props.getQuote()
         }
 
         return (
             <>
                 <div>
                     <p>{props.description}</p>
-                    <p>{props.movie}</p>
+                    <p>{props.character}, {props.movie}</p>
                     {props.rate &&
                         <p>Nota: {props.rate}</p>
                     }
