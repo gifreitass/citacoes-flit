@@ -1,10 +1,10 @@
 import Quote from "../molecules/Quote"
 import Welcome from "../atoms/Welcome"
-import BestQuotes from "../atoms/BestQuotes"
-import { useEffect, useState } from "react"
+import BestQuotes, { iBestQuotes } from "../atoms/BestQuotes"
+import { useState } from "react"
 
 function QuotesList () {
-    const [bestQuotes, setBestQuotes] = useState([])
+    const [bestQuotes, setBestQuotes] = useState<iBestQuotes[]>([])
 
     return (
         <>
