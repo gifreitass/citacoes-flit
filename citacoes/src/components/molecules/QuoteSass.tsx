@@ -1,6 +1,6 @@
 import React from "react";
-import { iBestQuotes } from "./BestQuotes";
-import ButtonRate from "../atoms/ButtonRate"
+import { iBestQuotes } from "./BestQuotesSass";
+import ButtonRate from "../atoms/ButtonRateSass"
 
 interface props{
     showButton: boolean;
@@ -37,15 +37,15 @@ const Quote: React.FC<props> = (props) => {
 
         return (
             <section>
-                <div style={{marginTop: '35px'}}>
+                <div>
                     <p>{props.description}</p>
                     <p>{props.character}, {props.movie}</p>
                     {props.rate &&
-                        <p style={{fontWeight: '500'}}>Nota: {props.rate}</p>
+                        <p>Nota: {props.rate}</p>
                     }
                 </div>
                 {props.showButton && 
-                <div style={{display: 'flex', gap: '20px', justifyContent: 'center', marginTop: '30px'}}>
+                <div className="divButton">
                     <ButtonRate value={1} onClick={handleClick}>1</ButtonRate>
                     <ButtonRate value={2} onClick={handleClick}>2</ButtonRate>
                     <ButtonRate value={3} onClick={handleClick}>3</ButtonRate>
