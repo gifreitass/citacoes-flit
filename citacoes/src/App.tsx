@@ -1,5 +1,5 @@
 import './App.css';
-import QuotesList from './components/templates/QuotesListSass';
+import QuotesList from './components/templates/QuotesList';
 import './style.sass';
 
 function App() {
