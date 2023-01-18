@@ -1,6 +1,6 @@
-import Quote from "../molecules/Quote"
-import Welcome from "../atoms/Welcome"
-import BestQuotes, { iBestQuotes } from "../molecules/BestQuotes"
+import Quote from "../molecules/QuoteSass"
+import Welcome from "../atoms/WelcomeSass"
+import BestQuotes, { iBestQuotes } from "../molecules/BestQuotesSass"
 import { useState } from "react"
 import axios from "axios";
 
@@ -32,16 +32,7 @@ function QuotesList() {
     return (
         <section style={{ textAlign: 'center' }}>
             <Welcome />
-            <button onClick={handleClick}
-                style={{
-                    padding: '10px',
-                    backgroundColor: "#B2BEB5",
-                    border: '1px solid #B2BEB5',
-                    borderRadius: '5px',
-                    cursor: 'pointer'
-                }}
-            >Iniciar votação
-            </button>
+            <button className="buttonStart" onClick={handleClick}>Iniciar votação</button>
             {/* showButton define a prop como true (se a prop não for passada é false) */}
             {loadedQuote &&
                 <Quote

@@ -1,6 +1,6 @@
 const Welcome: React.FC = () => {
     return (
-        <p>Bem-vindo ao citações de séries!</p>
+        <p style={{fontSize: '30px', fontWeight: '500'}}>Bem-vindo ao citações de séries!</p>
     )
 }
 
