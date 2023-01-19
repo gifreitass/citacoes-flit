@@ -1,4 +1,5 @@
 import styled from "styled-components"
+import { Link } from "react-router-dom"
 
 const Login = () => {
     const Div = styled.div`
@@ -30,7 +31,7 @@ const Login = () => {
             <Input type="text" id="username"></Input> <br/>
             <label htmlFor="password">Senha:</label>
             <Input type="text" id="password"></Input> <br/>
-            <Button>Entrar</Button>
+            <Link to="/perfil"><Button>Entrar</Button></Link>
         </Div>
     )
 }
