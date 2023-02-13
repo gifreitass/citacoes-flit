@@ -5,7 +5,7 @@ const ButtonRate: React.FC<{
 }> = (props) => {
     
     return (
-        <button {...props} className="buttonRate"></button>
+        <button {...props} data-testid="button-rate" className="buttonRate"></button>
     )
 }
 
