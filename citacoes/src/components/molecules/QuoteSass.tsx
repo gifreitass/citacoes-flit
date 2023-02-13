@@ -45,7 +45,7 @@ const Quote: React.FC<props> = (props) => {
                     }
                 </div>
                 {props.showButton && 
-                <div className="divButton">
+                <div className="divButton" data-testid="showbutton-div-button">
                     <ButtonRate value={1} onClick={handleClick}>1</ButtonRate>
                     <ButtonRate value={2} onClick={handleClick}>2</ButtonRate>
                     <ButtonRate value={3} onClick={handleClick}>3</ButtonRate>
