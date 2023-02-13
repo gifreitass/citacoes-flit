@@ -44,6 +44,14 @@
       "last 1 safari version"
     ]
   },
+  "jest": {
+    "watchPathIgnorePatterns": [
+      "mocks"
+    ],
+    "moduleNameMapper": {
+      "axios": "axios/dist/node/axios.cjs"
+    }
+  },
   "devDependencies": {
     "@types/styled-components": "^5.1.26"
   }

@@ -32,7 +32,7 @@ function QuotesList() {
     return (
         <section style={{ textAlign: 'center' }}>
             <Welcome />
-            <button className="buttonStart" onClick={handleClick}>Iniciar votação</button>
+            <button data-testid="buttonStart" className="buttonStart" onClick={handleClick}>Iniciar votação</button>
             {/* showButton define a prop como true (se a prop não for passada é false) */}
             {loadedQuote &&
                 <Quote
