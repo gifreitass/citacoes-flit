@@ -9,7 +9,7 @@ export interface iBestQuotes{
 
 const BestQuotes: React.FC<{bestQuotes: iBestQuotes[]}> = (props) => {
     return (
-        <div>
+        <div data-testid="best-quotes-wrapper">
             <p>Melhores citações:</p>
             {/* usei o b.rate e a.rate para comparar os rates dos objetos */}
             {props.bestQuotes.sort((a,b) => {
