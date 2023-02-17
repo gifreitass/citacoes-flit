@@ -1,12 +1,11 @@
 import styled from "styled-components"
 import { Link } from "react-router-dom"
 
-const Login = () => {
-    const Div = styled.div`
+const Div = styled.div`
         margin: 30px auto;
         background-color: #d3d3d3;
         padding: 20px;
-        width: 60vw
+        width: 60vw;
     `
 
     const Button = styled.button`
@@ -16,14 +15,16 @@ const Login = () => {
         border-radius: 5px;
         cursor: pointer;
         margin-top: 10px;
-        color: white
+        color: white;
     `
 
     const Input = styled.input`
         margin-left: 10px;
         border-radius: 5px;
-        border: 2px solid #00009C
+        border: 2px solid #00009C;
     `
+
+const Login = () => {
 
     return(
         <Div>
@@ -31,7 +32,7 @@ const Login = () => {
             <Input type="text" id="username"></Input> <br/>
             <label htmlFor="password">Senha:</label>
             <Input type="text" id="password"></Input> <br/>
-            <Link to="/perfil"><Button>Entrar</Button></Link>
+            <Link to="/perfil"><Button data-testid="enter-button">Entrar</Button></Link>
         </Div>
     )
 }

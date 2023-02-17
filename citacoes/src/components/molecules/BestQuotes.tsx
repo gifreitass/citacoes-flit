@@ -19,6 +19,7 @@ const BestQuotes: React.FC<{bestQuotes: iBestQuotes[]}> = (props) => {
                 //quote-item: chave única pro react identificar
                 return <Quote key={`quote-item-${index}`} description={quote.quote} movie={quote.movie} character={quote.character} showButton={false} rate={quote.rate}/>         
             })}
+            
         </div>
     )
 }
