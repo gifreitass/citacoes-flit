@@ -16,7 +16,7 @@ const ButtonRate: React.FC<{
     }
     
     return (
-        <button {...props} style={buttonStyle.button}></button>
+        <button data-testid="button-rate" {...props} style={buttonStyle.button}></button>
     )
 }
 

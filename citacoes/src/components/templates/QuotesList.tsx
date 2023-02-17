@@ -22,28 +22,28 @@ function QuotesList() {
 
     const getQuote = async () => {
         const response = await axios.get("https://animechan.vercel.app/api/random")
-        setLoadedQuote(response.data)
+        if(response?.data){
+            setLoadedQuote(response.data)
+        }
     }
 
     const handleClick = async () => {
         await getQuote()
     }
 
-    console.log(loadedQuote)
-
     const Button = styled.button`
     padding: 10px;
     background-color: #B2BEB5;
     border: 1px solid #B2BEB5;
     border-radius: 5px;
-    cursor: pointer
+    cursor: pointer;
     `
 
     return (
         <section style={{ textAlign: 'center' }}>
             <Welcome />
             <Login />
-            <Button onClick={handleClick}
+            <Button data-testid="quoteslist-button" onClick={handleClick}
                 // style={{
                 //     padding: '10px',
                 //     backgroundColor: "#B2BEB5",
@@ -63,6 +63,7 @@ function QuotesList() {
                     movie={loadedQuote.anime}
                     character={loadedQuote.character}
                     getQuote={getQuote}
+                    dataTestId='loadedQuote-container'
                 />
             }
             <BestQuotes bestQuotes={bestQuotes} />
